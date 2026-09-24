@@ -1,6 +1,6 @@
 import {
   ArrowRight, Building2, Check, ClipboardCheck, FileKey2, FileSearch,
-  HandCoins, House, Landmark, MapPin, MessageCircle, ScrollText, ShieldCheck,
+  House, Landmark, MapPin, MessageCircle, ScrollText, ShieldCheck,
 } from "lucide-react";
 import { createElement, useState } from "react";
 import { templateConfig as site, whatsappUrl } from "../../../config/template.config";
@@ -21,9 +21,8 @@ const legalPaths = [
   { icon: FileSearch, title: "Diligência em cartórios", text: "Levantamento da situação registral do imóvel para identificar documentos, registros e providências necessários." },
 ];
 
-function ContactLink({ className = "", message, children }) {
-  const directContact = whatsappUrl(message);
-  return <a className={className} href={directContact || "#formulario"} target={directContact ? "_blank" : undefined} rel={directContact ? "noreferrer" : undefined}>{children}</a>;
+function ContactLink({ className = "", children }) {
+  return <a className={className} href="#formulario">{children}</a>;
 }
 
 function formatPhone(value) {
@@ -41,7 +40,7 @@ export function HomePage() {
   function submitContact(event) {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
-    const message = `Olá! Meu nome é ${form.get("name")}. Telefone: ${phone}. Situação do imóvel: ${form.get("situation")}. ${form.get("details") ? `Detalhes: ${form.get("details")}` : ""}`;
+    const message = `Olá! Meu nome é ${form.get("name")}. Telefone: ${phone}. Situação do imóvel: ${form.get("situation")}.`;
     const destination = whatsappUrl(message);
     if (destination) {
       window.open(destination, "_blank", "noopener,noreferrer");
@@ -61,7 +60,7 @@ export function HomePage() {
             <h1>Documentação do imóvel <em>travando sua vida?</em></h1>
             <p className="hero-lead">Entenda os caminhos jurídicos para regularizar seu imóvel antes de vender, alugar ou financiar.</p>
             <div className="hero-actions">
-              <ContactLink className="button primary-button"><MessageCircle />Falar no WhatsApp</ContactLink>
+              <ContactLink className="button primary-button"><MessageCircle />Solicitar atendimento</ContactLink>
               <a className="button secondary-button" href="#formulario">Prefiro que me retornem</a>
             </div>
             <p className="service-note"><ShieldCheck /> Atendimento para todo o Maranhão.</p>
@@ -83,8 +82,8 @@ export function HomePage() {
               {qualificationItems.map((item) => <div className="check-item" key={item}><span><Check /></span><p>{item}</p></div>)}
             </div>
             <div className="investment-note">
-              <HandCoins />
-              <div><strong>Como funciona o investimento</strong><p>O escritório trabalha com uma estrutura de entrada e parcelamento, definida conforme a análise do seu caso.</p></div>
+              <ClipboardCheck />
+              <div><strong>Como o atendimento é definido</strong><p>Após conhecer os documentos e o objetivo do imóvel, o escritório apresenta o escopo jurídico aplicável e os próximos passos possíveis.</p></div>
             </div>
           </div>
 
@@ -106,9 +105,7 @@ export function HomePage() {
                   <option>Outra situação</option>
                 </select>
               </label>
-              <label>Se quiser, conte um pouco mais<textarea name="details" maxLength="600" rows="4" placeholder="Evite enviar documentos ou dados sensíveis neste primeiro contato." /></label>
               <button className="button form-button" type="submit">Solicitar retorno <ArrowRight /></button>
-              <p className="privacy-note">Use somente as informações necessárias. Cada caso depende de análise individual.</p>
               {formMessage && <p className="form-status" role="status">{formMessage}</p>}
             </form>
           </aside>
@@ -132,23 +129,29 @@ export function HomePage() {
       <section className="mid-cta">
         <div className="container mid-cta-grid">
           <div><span className="section-kicker light">Cada imóvel tem uma história</span><h2>Toda situação tem um caminho a ser avaliado.</h2></div>
-          <div><p>Conte a sua e entenda quais opções existem para o seu caso.</p><ContactLink className="button light-button">Falar no WhatsApp <ArrowRight /></ContactLink></div>
+          <div><p>Conte a sua e entenda quais opções existem para o seu caso.</p><ContactLink className="button light-button">Ir para o formulário <ArrowRight /></ContactLink></div>
         </div>
       </section>
 
       <section className="authority" id="escritorio">
         <div className="container authority-grid">
-          <div className="authority-photo">
-            <img src="/images/imovel-moderno.jpg" width="1600" height="900" loading="lazy" alt="Fachada de um imóvel residencial moderno" />
-            <div className="year-badge"><strong>2018</strong><span>atuação no Direito Civil</span></div>
+          <div className="authority-visual">
+            <figure className="authority-photo">
+              <img src="/images/andre-retrato.jpg" width="1086" height="1448" loading="lazy" alt="Retrato profissional do advogado André Felipe dos Anjos" />
+              <figcaption><strong>André dos Anjos</strong><span>{site.brand.oab}</span></figcaption>
+            </figure>
           </div>
           <div className="authority-copy">
             <span className="section-kicker">Quem vai cuidar do seu caso</span>
-            <h2>Dos Anjos Advocacia</h2>
-            <p className="authority-lead">O escritório atua no Direito Civil desde 2018, com foco em Direito Imobiliário.</p>
-            <div className="credential"><ClipboardCheck /><p>O advogado responsável, <strong>{site.brand.lawyer}</strong>, integra a Comissão de Direito Imobiliário da OAB/MA.</p></div>
+            <h2>André dos Anjos</h2>
+            <p className="authority-lead">Advogado responsável pelo Dos Anjos Advocacia, escritório que atua no Direito Civil desde 2018, com foco em demandas imobiliárias.</p>
+            <div className="credential"><ClipboardCheck /><p><strong>{site.brand.lawyer}</strong> integra a Comissão de Direito Imobiliário da OAB/MA.</p></div>
             <div className="credential"><Building2 /><p>Atendimento voltado à análise documental e à construção do caminho jurídico adequado para cada imóvel.</p></div>
-            <p className="oab-pending">{site.brand.oab}</p>
+            <div className="practice-profile" aria-label="Áreas de atuação profissional">
+              <p>Atuação profissional em</p>
+              <div><span>Direito Civil</span><span>Processual Civil</span><span>Notarial e Registral</span></div>
+            </div>
+            <p className="oab-number">{site.brand.oab}</p>
           </div>
         </div>
       </section>
@@ -159,10 +162,13 @@ export function HomePage() {
             <span className="section-kicker light">Seu próximo passo começa com clareza</span>
             <h2>Fale com a equipe e entenda o seu caso.</h2>
             <p>Conte a situação do seu imóvel e receba orientação sobre os próximos passos possíveis.</p>
-            <ContactLink className="button light-button">Falar no WhatsApp <ArrowRight /></ContactLink>
-            {!site.contact.whatsapp && <small>O número do WhatsApp será inserido antes da publicação.</small>}
+            <ContactLink className="button light-button">Solicitar atendimento <ArrowRight /></ContactLink>
           </div>
-          <img className="keys-art" src="/images/chaves-imovel.png" width="760" height="760" loading="lazy" alt="" />
+          <aside className="final-assurance" aria-label="Informações do atendimento">
+            <span className="final-number" aria-hidden="true">02</span>
+            <div><MapPin /><p><strong>Atendimento em todo o Maranhão</strong><span>Orientação jurídica com análise individual de cada caso.</span></p></div>
+            <div><ShieldCheck /><p><strong>Contato direto e objetivo</strong><span>Informe apenas seu nome, telefone e a situação do imóvel.</span></p></div>
+          </aside>
         </div>
       </section>
     </>

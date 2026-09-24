@@ -1,10 +1,8 @@
 import { Menu, MessageCircle, X } from "lucide-react";
 import { useState } from "react";
-import { whatsappUrl } from "../../config/template.config";
 
 export function Header() {
   const [open, setOpen] = useState(false);
-  const directContact = whatsappUrl();
   const close = () => setOpen(false);
 
   return (
@@ -21,7 +19,7 @@ export function Header() {
           <a href="#para-quem" onClick={close}>Para quem é</a>
           <a href="#caminhos" onClick={close}>Caminhos jurídicos</a>
           <a href="#escritorio" onClick={close}>O escritório</a>
-          <a className="header-cta" href={directContact || "#formulario"} target={directContact ? "_blank" : undefined} rel={directContact ? "noreferrer" : undefined} onClick={close}>
+          <a className="header-cta" href="#formulario" onClick={close}>
             Falar com a equipe <MessageCircle />
           </a>
         </nav>

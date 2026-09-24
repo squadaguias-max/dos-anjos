@@ -17,6 +17,8 @@ Template 6 — Advocacia clássica contemporânea, em React + Vite.
 - sem promessas de resultado;
 - cada caso depende de análise individual;
 - atuação em todo o Maranhão;
-- OAB e WhatsApp permanecem pendentes e impedem a publicação final;
-- formulário abre uma conversa preenchida no WhatsApp quando o número for configurado;
+- OAB/MA 19.341, WhatsApp e e-mail estão confirmados;
+- formulário abre uma conversa preenchida no WhatsApp oficial do escritório;
+- Direito Civil, Processual Civil, Notarial e Registral aparecem como áreas de atuação, sem alegação de especialização;
+- fotografias profissionais de André e do ambiente do escritório integram a seção institucional e o CTA final;
 - a página publicada deve conter somente a rota principal.

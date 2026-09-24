@@ -3,9 +3,14 @@ export const templateConfig = {
     name: "Dos Anjos",
     descriptor: "Advocacia",
     lawyer: "André Felipe dos Anjos",
-    oab: "OAB/MA — número pendente",
+    oab: "OAB/MA 19.341",
   },
-  contact: { whatsapp: "" },
+  contact: {
+    whatsapp: "5598991360102",
+    phone: "+5598991360102",
+    phoneLabel: "(98) 99136-0102",
+    email: "andrefelipesilva.jus@gmail.com",
+  },
   office: { areaServed: "Todo o Maranhão" },
 };
 

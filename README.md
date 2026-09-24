@@ -12,12 +12,16 @@ npm run build
 
 O build gera a pasta `dist` e inclui o conteúdo principal já renderizado no HTML inicial.
 
-## Dados que faltam antes da publicação
+## Dados confirmados
 
-- número da OAB/MA de André Felipe dos Anjos;
-- número oficial do WhatsApp com DDD e código do país;
+- André Felipe dos Anjos — OAB/MA 19.341;
+- WhatsApp: (98) 99136-0102;
+- e-mail: andrefelipesilva.jus@gmail.com.
+
+## Pendências
+
 - domínio oficial para canonical, sitemap e URLs de compartilhamento;
-- endpoint real para o formulário, caso o retorno não seja feito pelo WhatsApp.
+- comprovação de eventual titulação formal antes de usar os termos “especialista” ou “especialização”.
 
-O WhatsApp deve ser preenchido em `src/config/template.config.js`. Enquanto estiver vazio, os CTAs levam ao formulário e não criam links externos inválidos.
+O formulário prepara uma mensagem e abre o WhatsApp oficial do escritório. As áreas Direito Civil, Processual Civil, Notarial e Registral são descritas apenas como atuação profissional.
 # dos-anjos

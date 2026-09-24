@@ -1,4 +1,4 @@
-import { MapPin, MessageCircle, Scale } from "lucide-react";
+import { Mail, MapPin, MessageCircle, Phone, Scale } from "lucide-react";
 import { templateConfig as site } from "../../config/template.config";
 
 export function Footer() {
@@ -13,7 +13,9 @@ export function Footer() {
           <span><Scale />{site.brand.lawyer}</span>
           <span><Scale />{site.brand.oab}</span>
           <span><MapPin />Atuação em todo o Maranhão</span>
-          <span><MessageCircle />WhatsApp — número pendente</span>
+          <a href={`https://wa.me/${site.contact.whatsapp}`} target="_blank" rel="noreferrer"><MessageCircle />WhatsApp {site.contact.phoneLabel}</a>
+          <a href={`tel:${site.contact.phone}`}><Phone />{site.contact.phoneLabel}</a>
+          <a href={`mailto:${site.contact.email}`}><Mail />{site.contact.email}</a>
         </div>
       </div>
       <div className="container footer-bottom">

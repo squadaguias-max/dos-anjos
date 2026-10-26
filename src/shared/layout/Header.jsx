@@ -9,8 +9,7 @@ export function Header() {
     <header className="site-header">
       <div className="container header-inner">
         <a className="brand" href="#inicio" aria-label="Dos Anjos Advocacia — início" onClick={close}>
-          <span className="brand-mark" aria-hidden="true">DA</span>
-          <span className="brand-copy"><b>Dos Anjos</b><small>ADVOCACIA</small></span>
+          <img className="brand-logo" src="/images/logo-dos-anjos.png" width="1918" height="820" alt="Dos Anjos Advocacia" />
         </a>
         <button className="menu-button" type="button" onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-controls="menu-principal" aria-label={open ? "Fechar menu" : "Abrir menu"}>
           {open ? <X /> : <Menu />}

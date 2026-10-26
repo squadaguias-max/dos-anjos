@@ -6,8 +6,7 @@ export function Footer() {
     <footer className="site-footer">
       <div className="container footer-main">
         <div className="footer-identity">
-          <span className="footer-mark" aria-hidden="true">DA</span>
-          <div><h2>{site.brand.name}</h2><p>{site.brand.descriptor}</p></div>
+          <img className="footer-logo" src="/images/logo-dos-anjos.png" width="1918" height="820" alt="Dos Anjos Advocacia" loading="lazy" />
         </div>
         <div className="footer-details">
           <span><Scale />{site.brand.lawyer}</span>

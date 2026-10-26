@@ -34,11 +34,8 @@ section[id], aside[id] { scroll-margin-top: 90px; }
 
 .site-header { position: absolute; z-index: 50; top: 0; right: 0; left: 0; color: #fff; }
 .header-inner { min-height: 92px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,.16); }
-.brand { display: inline-flex; align-items: center; gap: 13px; }
-.brand-mark, .footer-mark { display: grid; place-items: center; border: 1px solid rgba(255,255,255,.58); width: 44px; height: 44px; font: 700 .76rem/1 Georgia, serif; letter-spacing: -.04em; }
-.brand-copy { display: grid; }
-.brand-copy b { font: 600 1.24rem/1.05 Georgia, serif; letter-spacing: -.02em; }
-.brand-copy small { margin-top: 4px; font-size: .59rem; letter-spacing: .24em; color: #a9c0c6; }
+.brand { display: inline-flex; align-items: center; }
+.brand-logo { display: block; width: 170px; height: auto; }
 .nav { display: flex; align-items: center; gap: 28px; font-size: .84rem; font-weight: 600; }
 .nav > a:not(.header-cta) { color: #d7e3e6; }
 .nav > a:hover { color: #fff; }
@@ -173,9 +170,7 @@ section[id], aside[id] { scroll-margin-top: 90px; }
 .site-footer { padding: 64px 0 26px; color: #fff; background: #0b1520; }
 .footer-main { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
 .footer-identity { display: flex; align-items: center; gap: 16px; }
-.footer-mark { width: 54px; height: 54px; color: #b7d8dc; border-color: #5d7b82; }
-.footer-identity h2 { margin: 0; font: 600 1.7rem/1 Georgia, serif; }
-.footer-identity p { margin: 5px 0 0; color: #82949a; font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; }
+.footer-logo { display: block; width: 230px; height: auto; }
 .footer-details { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 30px; }
 .footer-details span, .footer-details a { display: flex; align-items: flex-start; gap: 10px; color: #aebbc0; font-size: .84rem; }
 .footer-details a:hover { color: #fff; }
@@ -212,8 +207,7 @@ section[id], aside[id] { scroll-margin-top: 90px; }
 @media (max-width: 700px) {
   .container { width: min(100% - 28px, 1180px); }
   .header-inner { min-height: 76px; }
-  .brand-mark { width: 39px; height: 39px; }
-  .brand-copy b { font-size: 1.08rem; }
+  .brand-logo { width: 142px; }
   .hero, .hero-grid { min-height: 780px; }
   .hero-copy { padding-top: 120px; }
   .hero h1 { font-size: clamp(2.35rem, 12vw, 3.2rem); }

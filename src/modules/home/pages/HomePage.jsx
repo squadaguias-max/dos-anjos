@@ -55,7 +55,7 @@ export function HomePage() {
       <section className="hero" id="inicio">
         <div className="hero-ambient" aria-hidden="true" />
         <div className="container hero-grid">
-          <div className="hero-copy">
+          <div className="hero-cop">
             <span className="eyebrow"><MapPin /> Regularização imobiliária no Maranhão</span>
             <h1>Documentação do imóvel <em>travando sua vida?</em></h1>
             <p className="hero-lead">Entenda os caminhos jurídicos para regularizar seu imóvel antes de vender, alugar ou financiar.</p>
